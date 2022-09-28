@@ -1,0 +1,52 @@
+import numpy as np
+Part A
+arrA = np.random.randint(1,50,(4,7))
+print(arrA)
+#(a.1) 
+print("\nMean of arr: ",arrA.mean(axis = 1))
+#(a.2)
+print("\nStandard Deviation: ", arrA.std(axis = 1))
+#(a.2)
+print("\nVariance: ", arrA.var(axis = 1))
+
+#Part B
+B = [56, 48, 22, 41, 78, 91, 24, 46, 8, 33]
+newArr = np.array(B)
+#(b.1)
+print("\nSorted array: ", np.sort(newArr))
+print("\nIndices of sorted array: ", np.argsort(newArr))
+
+#Part C
+m = int(input("Enter the number of rows(m): "))
+n = int(input("Enter the number of columns(n): "))
+
+arrC = np.random.randint(1,100,(m,n))
+print(arrC)
+
+print("Shape: ", arrC.shape)
+print("Type: ", type(arrC))
+print("Data Type: ", arrC.dtype)
+arrC = arrC.reshape(n,m)
+print("After Reshaping: ", arrC)
+print("New Shape: ", arrC.shape)
+
+#Part D
+arrD = np.array([1,0,5,7,8])
+print("\nOriginal Array: ", arrD)
+print("Test if no element is zero: ", np.all(arrD))
+index = np.where(arrD == 0)[0]
+print("Index of all zeroes in arrD: ", index)
+
+
+arrD = np.array([1,0,4,5,0,4,0,0,0])
+print("\n\nOriginal Array: ", arrD)
+print("Test if any element is non zero: ", np.any(arrD))
+index = np.where(arrD != 0)[0]
+print("Index of all non zeroes in arrD: ", index)
+
+
+arrD = np.array([1,0,np.nan, 5, np.nan,0])
+print("\n\nOriginal Array: ", arrD)
+print("Test if any element is not a number: ", np.isnan(arrD))
+index =  np.where(np.isnan(arrD) == True)[0]
+print("Index of all nans in arrD: ", index)

@@ -1,0 +1,9 @@
+def createDictList(heights):
+    keys=heights.keys()
+    values = zip(*[heights[k] for k in keys])
+    result = [dict(zip(keys,v )) for v in values]
+    return result
+
+heights = {'Boys':[72,68,70,69,74], 'Girls':[63,65,69,62,61]}
+print("Original Dictionary Of Lists :" , heights)
+print("\nNew list of dictionaries : ",createDictList(heights))
